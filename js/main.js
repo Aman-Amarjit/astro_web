@@ -71,18 +71,6 @@
     });
   }
 
-  /* ── ACTIVE NAV LINK ───────────────────────────────────────────────────── */
-  function initActiveNav() {
-    var path = window.location.pathname;
-    document.querySelectorAll('.nav-links a').forEach(function (link) {
-      link.classList.remove('active');
-      var href = link.getAttribute('href') || '';
-      var isHome = (path === '/' || path.endsWith('index.html')) && href === 'index.html';
-      var isPage = href !== 'index.html' && path.includes(href.replace('../', ''));
-      if (isHome || isPage) link.classList.add('active');
-    });
-  }
-
   /* ── BOOKING FORM ──────────────────────────────────────────────────────── */
   function initBookingForm() {
     var form = document.getElementById('bookingForm');
@@ -120,7 +108,6 @@
     initHeader();
     initMobileMenu();
     initBackToTop();
-    initActiveNav();
     initBookingForm();
   });
 
