@@ -292,8 +292,7 @@ img { max-width:100%; display:block; }
   padding:0;
   overflow:hidden;
   /* clip so the scrolling strip never shows outside bounds */
-  -webkit-mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);
-  mask-image:linear-gradient(to right,transparent 0%,#000 60px,#000 calc(100% - 60px),transparent 100%);
+  /* no edge mask — clean on mobile */
 }
 .trust-scroll {
   /* Single row containing BOTH duplicate sets — moves together as one unit */
@@ -725,12 +724,11 @@ img { max-width:100%; display:block; }
 /* ═══════════════════════════════════════════════════════════════════════════
    SCROLL REVEAL
    ═══════════════════════════════════════════════════════════════════════════ */
-.reveal { opacity:0; transform:translateY(22px); transition:opacity 0.6s ease, transform 0.6s ease; }
+.reveal { opacity:0; transform:translateY(18px); transition:opacity 0.5s ease, transform 0.5s ease; }
 .reveal.active { opacity:1; transform:translateY(0); }
-/* No animation on mobile — prevents photo/content jumping */
-@media (max-width:900px) {
-  .reveal { opacity:1; transform:none; transition:none; }
-  .reveal.active { opacity:1; transform:none; }
+/* Disable animation on mobile/tablet — no jumping */
+@media (max-width:1024px) {
+  .reveal, .reveal.active { opacity:1 !important; transform:none !important; transition:none !important; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════

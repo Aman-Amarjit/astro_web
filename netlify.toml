@@ -34,3 +34,13 @@
   from = "/booking"
   to = "/pages/contact.html"
   status = 301
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/pages/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
