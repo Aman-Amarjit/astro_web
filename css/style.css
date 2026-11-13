@@ -778,7 +778,7 @@ img { max-width:100%; display:block; }
 
   /* About */
   .about-wrap { grid-template-columns:1fr; gap:40px; }
-  .about-photo-col { max-width:320px; margin:0 auto; }
+  .about-photo-col { max-width:320px; margin:0 auto; position:static; top:auto; }
 
   /* Services */
   .services-grid { grid-template-columns:1fr; }
@@ -835,8 +835,9 @@ img { max-width:100%; display:block; }
   .trust-item { padding:11px 20px; font-size:0.68rem; }
 
   /* About */
-  .about-photo-col { max-width:280px; }
+  .about-photo-col { max-width:260px; position:static; top:auto; }
   .about-text { text-align:left; }
+  .about-wrap { display:flex; flex-direction:column; gap:28px; }
   .creds-list { gap:12px; }
 
   /* Services */
