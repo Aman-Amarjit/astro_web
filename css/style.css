@@ -339,7 +339,6 @@ img { max-width:100%; display:block; }
 .about-photo {
   width:100%; border-radius:var(--r-lg);
   object-fit:cover; object-position:center top; aspect-ratio:3/4;
-  position:relative; z-index:1;
   filter:contrast(1.03) brightness(1.01);
 }
 .photo-placeholder {
@@ -758,13 +757,14 @@ img { max-width:100%; display:block; }
 
   /* Nav */
   .nav-links {
-    display:none; position:absolute; top:66px; left:0; right:0;
+    display:none !important;
+    position:absolute; top:66px; left:0; right:0;
     background:var(--ink); flex-direction:column; padding:12px 20px 20px;
     border-bottom:1px solid rgba(154,114,48,0.25);
     box-shadow:0 12px 32px rgba(0,0,0,0.4); gap:2px; z-index:200;
   }
   .nav-links a { padding:12px 14px; font-size:1rem; }
-  .nav-links.show { display:flex; }
+  .nav-links.show { display:flex !important; }
   .mobile-toggle { display:flex; }
   .nav-btn-wrap { display:none !important; }
 
@@ -777,8 +777,17 @@ img { max-width:100%; display:block; }
   .hero-stats { gap:28px; }
 
   /* About */
-  .about-wrap { grid-template-columns:1fr; gap:40px; }
-  .about-photo-col { max-width:320px; margin:0 auto; position:static; top:auto; }
+  .about-wrap { display:flex; flex-direction:column; gap:32px; }
+  /* Show text FIRST, photo SECOND on mobile */
+  .about-text     { order:1; }
+  .about-photo-col {
+    order:2;
+    position:static !important;
+    top:auto !important;
+    width:100%;
+    max-width:260px;
+    margin:0 auto;
+  }
 
   /* Services */
   .services-grid { grid-template-columns:1fr; }
@@ -835,9 +844,9 @@ img { max-width:100%; display:block; }
   .trust-item { padding:11px 20px; font-size:0.68rem; }
 
   /* About */
-  .about-photo-col { max-width:260px; position:static; top:auto; }
-  .about-text { text-align:left; }
-  .about-wrap { display:flex; flex-direction:column; gap:28px; }
+  .about-photo-col { max-width:200px; position:static !important; top:auto !important; }
+  .about-text { order:1; text-align:left; }
+  .about-wrap { display:flex; flex-direction:column; gap:20px; }
   .creds-list { gap:12px; }
 
   /* Services */
