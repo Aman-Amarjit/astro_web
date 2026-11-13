@@ -144,8 +144,8 @@ img { max-width:100%; display:block; }
   color:rgba(255,255,255,0.65); padding:8px 14px; border-radius:4px;
   transition:all var(--t);
 }
-.nav-links a:hover,.nav-links a.active { color:#fff; }
-.nav-links a.active { background:rgba(255,255,255,0.07); }
+.nav-links a:hover { color:#fff; }
+.nav-links a.active { color:#fff; border-bottom:2px solid var(--rust-lt); padding-bottom:6px; }
 
 .header-actions { display:flex; align-items:center; gap:10px; flex-shrink:0; }
 .nav-btn-wrap .btn { font-size:0.8rem; padding:8px 20px; }
@@ -330,7 +330,7 @@ img { max-width:100%; display:block; }
 }
 
 /* Photo */
-.about-photo-col { position:sticky; top:90px; }
+.about-photo-col { position:relative; top:auto; }
 .about-photo-frame {
   position:relative;
 }
@@ -724,12 +724,8 @@ img { max-width:100%; display:block; }
 /* ═══════════════════════════════════════════════════════════════════════════
    SCROLL REVEAL
    ═══════════════════════════════════════════════════════════════════════════ */
-.reveal { opacity:0; transform:translateY(18px); transition:opacity 0.5s ease, transform 0.5s ease; }
-.reveal.active { opacity:1; transform:translateY(0); }
-/* Disable animation on mobile/tablet — no jumping */
-@media (max-width:1024px) {
-  .reveal, .reveal.active { opacity:1 !important; transform:none !important; transition:none !important; }
-}
+/* Reveal: instant show, no animation */
+.reveal, .reveal.active { opacity:1; transform:none; transition:none; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
    UTILS
