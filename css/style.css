@@ -120,16 +120,9 @@ img { max-width:100%; display:block; }
 
 /* Brand */
 .brand { display:flex; align-items:center; gap:14px; flex-shrink:0; }
-.brand-mark {
-  font-family:'Noto Sans Devanagari', serif;
-  width:44px; height:44px; border-radius:50%;
-  background:rgba(26,15,8,0.85);
-  border:2px solid var(--gold);
-  box-shadow:0 0 10px rgba(154,114,48,0.35), inset 0 0 8px rgba(200,160,80,0.08);
-  display:flex; align-items:center; justify-content:center;
-  font-size:1.35rem; color:var(--gold-lt); line-height:1;
-  flex-shrink:0;
-  letter-spacing:0;
+.brand-mark, .om-icon {
+  width:44px; height:44px; flex-shrink:0; display:block;
+  filter:drop-shadow(0 0 6px rgba(154,114,48,0.4));
 }
 .brand-name {
   font-family:'Cormorant Garamond',serif; font-size:1.08rem; font-weight:600;
