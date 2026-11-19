@@ -296,7 +296,7 @@ img { max-width:100%; display:block; }
   width:max-content;
   animation:marquee 28s linear infinite;
 }
-.trust-scroll:hover { animation-play-state:paused; }
+/* marquee never pauses on hover */
 /* Both .trust-items sit side-by-side in that single row — no individual animation */
 .trust-items {
   display:flex;
